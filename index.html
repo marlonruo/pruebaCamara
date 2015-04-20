@@ -33,35 +33,8 @@
         
         <script src="js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="js/jquery.form.js"></script>
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
-<script type="text/javascript" charset="utf-8">
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value
-    document.addEventListener("deviceready",onDeviceReady,false);
-    function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }
-    function onPhotoDataSuccess(imageData) {
-      var smallImage = document.getElementById('smallImage');
-      smallImage.style.display = 'block';
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-    function onPhotoURISuccess(imageURI) {
-      var largeImage = document.getElementById('largeImage');
-      largeImage.style.display = 'block';
-      largeImage.src = imageURI;
-    }
-    function capturePhoto() {
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
-    }
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
 
-</script>
 
     </head>
     
@@ -6604,8 +6577,36 @@ Froukelien also worked for six years within a large exchange group, where she wo
 				}
 			}, 10);
 		});
+		
+		
+		
+	var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value
+    document.addEventListener("deviceready",onDeviceReady,false);
+    function onDeviceReady() {
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }
+    function onPhotoDataSuccess(imageData) {
+      var smallImage = document.getElementById('smallImage');
+      smallImage.style.display = 'block';
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+    }
+    function onPhotoURISuccess(imageURI) {
+      var largeImage = document.getElementById('largeImage');
+      largeImage.style.display = 'block';
+      largeImage.src = imageURI;
+    }
+    function capturePhoto() {
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+    }
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+		
         </script>
-        <script src="js/ui.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
