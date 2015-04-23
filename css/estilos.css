@@ -559,7 +559,8 @@ body {
 	left: 90%;
 	position: absolute;
 	background: url(../imagenes/flechita2.png) no-repeat;
-	background-position: center
+	background-position: center;
+	background-size:auto 25%
 }
 .day {
 	top: 20%;
@@ -615,9 +616,11 @@ body {
 	width: 100%;
 	font-family: helvetica;
 }
-.horario_conferencia_flecha {
-	background: url(../imagenes/flechita2.png) no-repeat;
-	background-position: 98% 45%;
+
+.horario_conferencia_flecha{ 
+	background:url(../imagenes/flechita2.png) no-repeat;
+	background-position:98% 45%;
+	background-size:auto 30px;
 }
 .horario_temas {
 	font-size: 22px;
@@ -702,8 +705,8 @@ body {
 	background-color: #FFFFFF
 }
 .redonda {
-	width: 150px;
-	height: 150px;
+	width: 60px;
+	height: 60px;
 	border-radius: 100px;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
@@ -713,13 +716,15 @@ body {
 	border: 10px solid #FFFFFF;
 	background-size: 100% 100%;
 }
-#agrandar {
-	-ms-transform: scale(2); /* IE 9 */
-	-webkit-transform: scale(2); /* Safari */
-	transform: scale(2);
-	position: absolute;
-	top: 820px;
-	left: 45%
+
+
+#agrandar{
+	-ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari */
+    transform: scale(1.5);
+	position:absolute;
+	top:420px;
+	left:37%
 }
 .ir_map {
 	cursor: pointer

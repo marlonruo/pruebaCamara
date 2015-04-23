@@ -106,15 +106,19 @@
 		</div> <!--///////////fin login///////////--> 
         
         
-        <iframe id="linkedd" style="position:absolute; width:100%; height:100%; border:none; display:none" scrolling="no" frameborder="0"></iframe>
+        <iframe id="linkedd" style="position:absolute; width:500px; height:500px; background-color:#fff; display:none"></iframe>
    
    		 <script>
-		 
-		 
+
 		 $('#boton_linkedin').click(function(){
 			$('#linkedd').fadeIn() 
 			document.getElementById('linkedd').src = "http://marlonruo.com/wfc2015/login.php"
+			//$("#linkedd").load("http://marlonruo.com/wfc2015/login.php"); 
 		 })
+		 
+		 function alerta(val1){
+			alert (val1);
+		 }
 		 
 		$('#forma_login').submit(function() {
         $.ajax({
@@ -268,7 +272,6 @@
         
         
         <script>
-		
         $('#forma_registro').submit(function() {
 		
 		var email = document.getElementById("f_email").value
@@ -304,7 +307,7 @@
             data: $(this).serialize(),
             success: function(data) {
 				
-					document.getElementById('if_qr').src = "qr.php?datos="+document.getElementById("f_nombre").value+", "+document.getElementById("f_apellido").value+", "+document.getElementById("f_email").value+", "+document.getElementById("f_telefono").value
+					document.getElementById('if_qr').src = "http://marlonruo.com/wfc2015/qr.php?datos="+document.getElementById("f_nombre").value+", "+document.getElementById("f_apellido").value+", "+document.getElementById("f_email").value+", "+document.getElementById("f_telefono").value
                 	
 				  window.location.href = '#exito'
 				  $('#exito').fadeIn(400)
@@ -774,27 +777,27 @@
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+  
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    
-                                    
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
+                    
+                    
               </div>
  
               <div class="menu" style="max-width:140px;">
@@ -847,22 +850,21 @@ Development, Chile</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -920,22 +922,21 @@ Development, Chile</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -995,22 +996,21 @@ Development, Chile</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1067,22 +1067,21 @@ Development, Chile</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1140,22 +1139,21 @@ Development, Chile</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1215,22 +1213,21 @@ CSDs are or should be doing about it.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1288,22 +1285,21 @@ CSDs are or should be doing about it.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                   <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1362,22 +1358,21 @@ CSDs are or should be doing about it.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1438,22 +1433,21 @@ CSDs are or should be doing about it.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1512,22 +1506,21 @@ future may hold.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1588,22 +1581,21 @@ future may hold.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1664,22 +1656,21 @@ future may hold.</span><br><br>
 <b>Room:</b> <span id="te_sala">Conference Room JW Marriott</span>
                         </div>
                     </div>
-                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:320px;">
+                    <div class="horario_conferencia" style="background-color:#ebfbfc; height:210px;">
                         <div class="horario_todo">	
-                            <img class="ir_map" src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:70px;"/>
-                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:450px; margin-left:20px; top:180px;"/>
+                            <a href="map.html" target="_parent"><img src="imagenes/ver_mapa.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:70px;"/></a>
+                            <img src="imagenes/agregar_calendario.png" width="60%" style="position:absolute; max-width:250px; margin-left:20px; top:125px;"/>
                         </div>
                    	</div>
+           
                     
-                    <div class="horario_conferencia" style="height:300px;">
+                    <div class="horario_conferencia" style="height:190px;">
                        <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:450px; margin-left:20px; top:20px; text-align:center; font-size:50px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:450px; margin-left:20px; top:100px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="115" height="115" style="position:absolute; left:0px;"/>
-                                    
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="115" height="115" style="position:absolute; left:50%; margin-left:-57px;"/></a> 
-                                    
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="115" height="115" style="position:absolute; right:0px;"/></a>
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
                                 </div>	 
                      		</div>
                    	</div>
@@ -1719,251 +1710,251 @@ future may hold.</span><br><br>
                     </div>
                     
                     <div id="bt_exp1" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Alessandro Zignani</b><br>
                             <b>LSE Group</b>, Head of Sales</b> | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp2" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Andrew White</b><br>
                             <b>ASX – Australia</b>, General Manager of Settlement Services | Wed, 20
                         </div>
                     </div>
                     
                     <div  id="bt_exp3" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Arturo del Castillo</b><br>
                             <b>KPMG</b>- Colombia, Partner | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp4" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Chris Church </b><br>
                             <b>SWIFT</b>, Chief Executive Americas and Global Head of Securities | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp5" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Dan Thieke</b><br>
                             <b>DTCC</b>, Managing Director and General Manager, Settlement & Asset Services  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp6" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Daniela Peterhoff</b><br>
                             <b>Oliver Wyman’s</b>, Market Infrastructure Practice | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp7" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Danny Missotten</b><br>
                             <b>Euroclear</b>, Director Corporate Strategy & Business Development  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp8" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Eddie Astanin</b><br>
                             <b>Chairman</b>, WFC | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp9" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Fernando Yáñez</b><br>
                             <b>DCV Chile</b>,  General Manager  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp10" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">G V Nageswara Rao</b><br>
                             <b>NSDL – India</b>, Managing Director  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp11" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Georg Zinner</b><br>
                             <b>OEKB – Austria</b>, Director Capital Market Services | Wed, 20
                         </div>
                     </div>
                     <div id="bt_exp12" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Gokce Iliris</b><br>
                             <b>MKK – Turkey</b>, Head of International Relations. | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp13" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Göran Fors</b><br>
                             <b>SEB</b>, Head of GTS Banks, SSC Member | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp14" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Henri Bergström</b><br>
                             <b>NASDAQ OMX</b>, Head of Global Post Trade Solutions | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp15" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Ivan Nicora</b><br>
                             <b>Euroclear</b>, Director and Head of Product Management for Investment Funds and International Markets | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp16" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Jae Hoon Yoo</b><br>
                             <b>KSD – Korea</b>, Chairman and CEO | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp17" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Jaime de la Barra</b><br>
                             <b>Compass Group – Partner - Chile</b>, Senior Investment Strategist and Regional Head of Business Development | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp18" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Jean Desgagné</b><br>
                             <b>CDS – Canadá</b>,  President and CEO  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp19" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Jeffrey Tessler</b><br>
                             <b>Chief Executive Officer Clearstream</b> | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp20" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Jesús Benito</b><br>
                             <b>Iberclear – Spain</b>, CEO | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp21" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Josef Landolt</b><br>
                             <b>ISSA</b>, CEO  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp22" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Lee R. Waite</b><br>
                             <b>CITI</b>, Global Head of Direct Custody & Clearing, Citi Transaction Services | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp23" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Gottfried Leibbrandt</b><br>
                             <b>SWIFT</b>, CEO | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp24" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Liu Jian</b><br>
                             <b>CSDC – China</b>, Senior Business Manager | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp25" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Mark Clancy</b><br>
                             <b>Chief Executive Officer</b>, Soltra | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp26" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Mathias Papenfuß </b><br>
                             <b>Clearstream</b>, Chairman - ECSDA, Member of the Executive Board | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp27" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Mohammed S. Abdel Salam</b><br>
                             <b>MCSD – Egypt</b>, Managing Director | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp28" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Monica Singer</b><br>
                             <b>Strate - South Africa</b>, CEO | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp29" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Muhammad Hanif </b><br>
                             <b>Central Depository Company of Pakistan Limited</b>, Chief Executive Officer | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp30" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Murray Pozmanter</b><br>
                             <b>DTCC</b>, Managing Director and Head of Clearing Agency Services | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp31" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Paul Symons</b><br>
                             <b>Euroclear</b>, Head of Public Affairs  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp32" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Sergey Shvetsov</b><br>
                             <b>Bank of Russia</b>, First Deputy Governor  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp33" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Tanya Knowles</b><br>
                             <b>Strate - South Africa</b>, Head of Projects, Innovation and Business Services  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp34" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Urs Stähli</b><br>
                             <b>ISSA</b>, Secretariat  | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp35" class="horario_conferencia" style="background-color:#ebfbfc">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Valerie Urbain</b><br>
                             <b>Euroclear Bank</b>, CEO | Wed, 20
                         </div>
                     </div>
                     
                     <div id="bt_exp36" class="horario_conferencia">
-                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%">
+                    	<div class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; background-size:auto 30px;">
                         	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Froukelien Wendt</b><br>
                             <b>IMF</b>, Senior Financial Sector Expert | Wed, 20
                         </div>
@@ -3109,7 +3100,7 @@ Froukelien also worked for six years within a large exchange group, where she wo
                     
                     <div class="horario_conferencia" style="background-color:#ebfbfc; margin-top:-10px;">
                     	<div class="horario_todo" style="width:60%;">
-                        	<b style="font-size:40px; color:#003366; font-family:helveticaBold">Conference Room JW Marriott</b><br><br>
+                        	<b style="font-size:28px; color:#003366; font-family:helveticaBold">Conference Room JW Marriott</b><br><br>
                             Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.
                         </div>
                     </div>
@@ -3151,13 +3142,13 @@ Froukelien also worked for six years within a large exchange group, where she wo
                     
                    <div class="horario_conferencia" style="background-color:#e5f4f7">
                     	<div id="bt_myqr" class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; padding-top:80px; padding-bottom:80px;">
-                        	<b style="font-size:40px; color:#003366; font-family:helveticaBold;">My Qr Code</b><br>
+                        	<b style="font-size:28px; color:#003366; font-family:helveticaBold;">My Qr Code</b><br>
                             In this section you could find your QR code that was assigned to you.
                         </div>
                     </div>
                     <div class="horario_conferencia" style="background-color:#f2fafb">
                     	<div  id="bt_scan" class="horario_todo" style="width:60%; background:url(imagenes/flechita2.png) no-repeat; background-position:100%; padding-top:80px; padding-bottom:80px;">
-                        	<b style="font-size:40px; color:#003366; font-family:helveticaBold;">Scan Qr Codes</b><br>
+                        	<b style="font-size:28px; color:#003366; font-family:helveticaBold;">Scan Qr Codes</b><br>
                             In this section you can scan other codes.
                         </div>
                     </div>
@@ -3203,7 +3194,7 @@ Froukelien also worked for six years within a large exchange group, where she wo
 
                     
                    <div class="myqr">
-                    	<img src="imagenes/qr.png" width="511" height="511" style="position:absolute; top:50%; margin-top:-255px; left:50%; margin-left:-175px"/>
+                    	<img src="imagenes/qr.png" width="250" height="250" style="position:absolute; top:50%; margin-top:-125px; left:50%; margin-left:-80px"/>
                     </div>
 
      
@@ -3246,10 +3237,11 @@ Froukelien also worked for six years within a large exchange group, where she wo
                     </div>
 
                    <div class="myqr">
-                    	<a onclick="scanear();" href="#"><img src="imagenes/scan.png" width="446" height="500" style="position:absolute; top:50%; margin-top:-250px; left:50%; margin-left:-125px"/></a>
+                    	<a onclick="scanear();" href="#"><img src="imagenes/scan.png" width="250" style="position:absolute; top:50%; margin-top:-125px; left:50%; margin-left:-80px"/></a>
+                        
                     </div>
                     
-                    <span id="resultado"> #ERROR</span>
+                    <span id="resultado" style="position:absolute; left:30%; top:30%"> #ERROR</span>
 
      
          </div> 
@@ -3288,10 +3280,21 @@ Froukelien also worked for six years within a large exchange group, where she wo
                         <div class="texto_carbon titulo_horarios1g">SHARE YOUR<BR>EXPERIENCE</div>
                     </div>
 
-                    <img style="height:100%;" id="smallImage" src="" />
+                    <img style="height:80%; position:absolute;" id="smallImage" src=""/>
+                    
+                    <div id="com_foto" class="horario_conferencia" style="height:190px; top:80%; display:none">
+                       <div class="horario_todo">
+                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
+                                </div>	 
+                     		</div>
+                   	</div>
                    
                    <div class="share" onClick="capturePhoto();">
-                    	<img src="imagenes/share.png" width="446" height="500" style="position:absolute; top:50%; margin-top:-295px; left:50%; margin-left:-125px"/>
+                    	<img src="imagenes/share.png" width="250" style="position:absolute; top:50%; margin-top:-125px; left:50%; margin-left:-80px"/>
                     </div>
          </div> 
                 
@@ -6590,6 +6593,7 @@ Froukelien also worked for six years within a large exchange group, where she wo
     function onPhotoDataSuccess(imageData) {
       var smallImage = document.getElementById('smallImage');
       smallImage.style.display = 'block';
+	  com_foto.style.display = 'block';
       smallImage.src = "data:image/jpeg;base64," + imageData;
     }
     function onPhotoURISuccess(imageURI) {
