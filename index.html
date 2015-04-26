@@ -79,7 +79,7 @@
               <div class="plecas2" style="top:79%; margin-top:-6px;">
                 <img src="imagenes/plecas.png" style="height:100%; position:absolute"/>
               </div>
-              <div id="boton_linkedin" class="bt_blanco texto_helvetica" style="top:86%; margin-top:-4px;">
+              <div id="boton_linkedin" class="bt_blanco texto_helvetica" style="top:86%; margin-top:-4px;" onClick="abrirHijo()">
                 <div class="t_bt_log tes_chico2" style="font-size:1.7rem">Log in usign linkedIn</div>
                 <img src="imagenes/flechita.png" style="position:absolute; height:40%; top:30%; position:absolute; left:90%"/>
               </div>
@@ -89,12 +89,12 @@
               </div>
               <form name="forma_login" id="forma_login" method="post" action="http://marlonruo.com/wfc2015/phps/enviar_login.php">
               <div class="email_caja">
-                    <input id="email" name="email" type="text" class="email_caja_campo" value="E-mail" onFocus="borrar()" onBlur="checar()" style="font-size:1.9rem">
+                    <input id="email" name="email" type="text" class="email_caja_campo" value="E-mail" onFocus="borrar()" onBlur="checar()" style="font-size:1.9rem" tabindex="1">
               </div>
               <div class="pass_caja">
-                    <input id="pass" name="pass" type="text" class="pass_caja_campo" value="Password" onFocus="borrar2()" onBlur="checar2()" style="font-size:1.9rem">
+                    <input id="pass" name="pass" type="text" class="pass_caja_campo" value="Password" onFocus="borrar2()" onBlur="checar2()" style="font-size:1.9rem" tabindex="2">
               </div>
-              		<input id="bt_login" type="submit" style="background:none; border:none; background:url(imagenes/bt_login.png) no-repeat; background-position:center; background-size:auto 90%" value="">
+              		<input id="bt_login" type="submit" style="background:none; border:none; background:url(imagenes/bt_login.png) no-repeat; background-position:center; background-size:auto 90%" value="" tabindex="3">
               </form>
               <div class="email_error" style="visibility:hidden">
                 <img id="im_error" src="imagenes/error_email.png" height="100%"/>
@@ -106,11 +106,15 @@
 		</div> <!--///////////fin login///////////--> 
         
         
-        <iframe id="linkedd" style="position:absolute; width:500px; height:500px; background-color:#fff; display:none"></iframe>
+        
    
    		 <script>
+		 
+		 function abrirHijo() {
+ window.open("https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=75dciqkn5zjdex&scope=r_basicprofile%20r_emailaddress%20r_contactinfo&state=5538fcdc7cd534.16233001&redirect_uri=http%3A%2F%2Fmarlonruo.com%2Fwfc2015%2Flogin.php", "popupId", "location=no,menubar=no,titlebar=no,resizable=no,toolbar=no, menubar=no,width=500,height=500"); 
+ }
 
-		 $('#boton_linkedin').click(function(){
+		 /*$('#boton_linkedin').click(function(){
 			$('#linkedd').fadeIn() 
 			document.getElementById('linkedd').src = "http://marlonruo.com/wfc2015/login.php"
 			//$("#linkedd").load("http://marlonruo.com/wfc2015/login.php"); 
@@ -118,7 +122,7 @@
 		 
 		 function alerta(val1){
 			alert (val1);
-		 }
+		 }*/
 		 
 		$('#forma_login').submit(function() {
         $.ajax({
@@ -227,24 +231,24 @@
            	  
               <form name="forma_registro" id="forma_registro" method="post" action="http://marlonruo.com/wfc2015/phps/enviar.php">
               <div class="caja" style="top: 22%;">
-           		<input id="f_nombre" name="nombre" type="text" class="caja_campo" value="First name" onFocus="fborrar1()" onBlur="fchecar1()">
+           		<input id="f_nombre" name="nombre" type="text" class="caja_campo" value="First name" onFocus="fborrar1()" onBlur="fchecar1()" tabindex="1">
               </div>
               <div class="caja" style="top: 30.6%;">
-           		<input id="f_apellido" name="apellido" type="text" class="caja_campo" value="Last name" onFocus="fborrar2()" onBlur="fchecar2()">
+           		<input id="f_apellido" name="apellido" type="text" class="caja_campo" value="Last name" onFocus="fborrar2()" onBlur="fchecar2()" tabindex="2">
               </div>
               <div class="caja" style="top: 39.4%;">
-           		<input id="f_telefono" name="telefono" type="text" class="caja_campo" value="Phone number" onFocus="fborrar3()" onBlur="fchecar3()">
+           		<input id="f_telefono" name="telefono" type="text" class="caja_campo" value="Phone number" onFocus="fborrar3()" onBlur="fchecar3()" tabindex="3">
               </div>
               <div class="caja" style="top: 48.4%;">
-           		<input id="f_email" name="correo" type="text" class="caja_campo" value="E-mail" onFocus="fborrar4()" onBlur="fchecar4()">
+           		<input id="f_email" name="correo" type="text" class="caja_campo" value="E-mail" onFocus="fborrar4()" onBlur="fchecar4()" tabindex="4">
               </div> 
               <div class="caja" style="top: 60%;">
-           		<input id="f_pass" name="pass" type="text" class="caja_campo" value="Password" onFocus="fborrar5()" onBlur="fchecar5()">
+           		<input id="f_pass" name="pass" type="text" class="caja_campo" value="Password" onFocus="fborrar5()" onBlur="fchecar5()" tabindex="5">
               </div> 
               <div class="caja" style="top: 68.5%;">
-           		<input id="f_pass2" name="pass2" type="text" class="caja_campo" value="Confirm your password" onFocus="fborrar6()" onBlur="fchecar6()">
+           		<input id="f_pass2" name="pass2" type="text" class="caja_campo" value="Confirm your password" onFocus="fborrar6()" onBlur="fchecar6()" tabindex="6">
               </div>   
-              <input type="submit" id="bt_registro" style="cursor:pointer" value="">
+              <input type="submit" id="bt_registro" style="cursor:pointer" value="" tabindex="7">
               </form>
 
               </div>
@@ -3237,7 +3241,7 @@ Froukelien also worked for six years within a large exchange group, where she wo
                     </div>
 
                    <div class="myqr">
-                    	<a onclick="scanear();" href="#"><img src="imagenes/scan.png" width="250" style="position:absolute; top:50%; margin-top:-125px; left:50%; margin-left:-80px"/></a>
+                    	<a onclick="scanear();" href="#scan"><img src="imagenes/scan.png" width="250" style="position:absolute; top:50%; margin-top:-125px; left:50%; margin-left:-80px"/></a>
                         
                     </div>
                     
@@ -3280,21 +3284,21 @@ Froukelien also worked for six years within a large exchange group, where she wo
                         <div class="texto_carbon titulo_horarios1g">SHARE YOUR<BR>EXPERIENCE</div>
                     </div>
 
-                    <img style="height:80%; position:absolute;" id="smallImage" src=""/>
                     
-                    <div id="com_foto" class="horario_conferencia" style="height:190px; top:80%; display:none">
-                       <div class="horario_todo">
-                            <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
-                            <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
-                                    <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
-                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
-                                    <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
-                                </div>	 
-                     		</div>
-                   	</div>
                    
                    <div class="share" onClick="capturePhoto();">
+                   		<img style="height:80%; position:absolute; margin-left:20%" id="smallImage" src=""/>
                     	<img src="imagenes/share.png" width="250" style="position:absolute; top:50%; margin-top:-125px; left:50%; margin-left:-80px"/>
+                        <div id="com_foto" class="horario_conferencia" style="height:190px; top:80%; display:none1">
+                           <div class="horario_todo">
+                                <div class="texto_carbon" style="position:absolute; max-width:250px; margin-left:20px; top:20px; text-align:center; font-size:28px; width:60%; color:#333">SHARE</div>
+                                <div style="position:absolute; max-width:250px; margin-left:20px; top:60px; text-align:center; font-size:50px; width:60%; color:#333">
+                                        <a href="mailto:?Subject=Welcoming remarks&Body=http://www.wfc-2015.net/"><img src="imagenes/correo.png" width="55" height="55" style="position:absolute; left:0px;"/></a>
+                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wfc-2015.net/" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/linkedin.png" width="55" height="55" style="position:absolute; left:50%; margin-left:-27px;"/></a>
+                                        <a href="http://twitter.com/share?url=http://www.wfc-2015.net/&text=Welcoming remarks&hashtags=wfc2015" target="popup" onClick="window.open(this.href, this.target, 'width=400,height=400'); return false;"><img src="imagenes/twitter.png" width="55" height="55" style="position:absolute; right:0px;"/></a>
+                                    </div>	 
+                                </div>
+                        </div>
                     </div>
          </div> 
                 
@@ -6593,7 +6597,7 @@ Froukelien also worked for six years within a large exchange group, where she wo
     function onPhotoDataSuccess(imageData) {
       var smallImage = document.getElementById('smallImage');
       smallImage.style.display = 'block';
-	  com_foto.style.display = 'block';
+	  $('#com_foto').fadeIn()
       smallImage.src = "data:image/jpeg;base64," + imageData;
     }
     function onPhotoURISuccess(imageURI) {
